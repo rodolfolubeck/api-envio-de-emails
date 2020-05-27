@@ -1,4 +1,8 @@
-# E-mail trigger service 
+#E-mail trigger service
+
+ 
+## Organizational work model
+#### git flow guide("https://danielkummer.github.io/git-flow-cheatsheet/")
 
 ## Usage 
 

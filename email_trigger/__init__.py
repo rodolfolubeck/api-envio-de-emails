@@ -4,6 +4,7 @@ import shelve
 
 from flask import Flask, g
 from flask_restful import Resource, Api, reqparse
+from .contact import Contact
 
 app = Flask(__name__)
 
@@ -55,6 +56,9 @@ class Send(Resource):
         parser.add_argument('sendDate', required=True)
 
         args = parser.parse_args()
+
+        contact = Contact(args['identifier'], args['email'], args['name'], args['sendDate'])
+        contact.send_email(args['email'])
 
         shelf = get_db()
         shelf[args['identifier']] = args

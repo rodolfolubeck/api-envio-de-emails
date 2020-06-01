@@ -58,7 +58,7 @@ class Send(Resource):
         args = parser.parse_args()
 
         contact = Contact(args['identifier'], args['email'], args['name'], args['sendDate'])
-        contact.send_email(args['email'])
+        contact.send_email(contact)
 
         shelf = get_db()
         shelf[args['identifier']] = args

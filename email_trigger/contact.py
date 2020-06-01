@@ -12,7 +12,7 @@ class Contact:
         self.name = name
         self.send_date = send_date
 
-    def send_email(self, email_to_address):
+    def send_email(self, contact):
 
         email_address = myemail
         email_password = pw
@@ -20,7 +20,7 @@ class Contact:
         msg = EmailMessage()
         msg['subject'] = 'E-mail contact from python!'
         msg['From'] = email_address
-        msg['To'] = email_to_address
+        msg['To'] = contact.email
         msg.set_content('This is the e-mail content text')
 
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
